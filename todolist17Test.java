@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * Unit tests for the TodoList class.
  */
-public class Todolist17Test {
+public class todolist17Test {
     private TodoList todoList;
 
     @BeforeEach

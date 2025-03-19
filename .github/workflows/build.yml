@@ -30,7 +30,7 @@ jobs:
         run: javac -d out -cp "lib/*" $(find . -name "*.java")
 
       - name: Run JUnit tests
-        run: java -cp "out:lib/*" org.junit.platform.console.ConsoleLauncher --select-class Todolist17Test
+        run: java -cp "out:lib/*" org.junit.platform.console.ConsoleLauncher --select-class todolist17Test
 
 
       - name: Run SonarQube Analysis
