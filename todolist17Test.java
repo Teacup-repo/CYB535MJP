@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * Unit tests for the TodoList class.
  */
-class TodoListTest {
+class todolist17Test {
     private TodoList todoList;
 
     @BeforeEach
