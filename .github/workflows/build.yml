@@ -23,12 +23,14 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Compile Java files
-        run: javac -d out $(find . -name "*.java")
+      - name: Create output directory
+        run: mkdir -p out
+
+      - name: Compile Java files (with JUnit in classpath)
+        run: javac -d out -cp "lib/*" $(find . -name "*.java")
 
       - name: Run JUnit tests
-        run: java -cp .:out:lib/junit-jupiter-api-5.9.1.jar org.junit.runner.JUnitCore todolist17Test.java
-
+        run: java -cp "out:lib/*" org.junit.platform.console.ConsoleLauncher --select-class todolist17Test
 
       - name: Run SonarQube Analysis
         run: |
