@@ -1,4 +1,4 @@
-name: Java CI with JUnit and SonarQube
+name: Java CI with JUnit and SonarCloud
 
 on:
   push:
@@ -32,11 +32,15 @@ jobs:
       - name: Run JUnit tests
         run: java -cp "out:lib/*" org.junit.platform.console.ConsoleLauncher --select-class todolist17Test
 
-
       # **Use SonarCloud GitHub Action**
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         with:
           projectBaseDir: .
+          args: >
+            -Dsonar.projectKey=clos-182_CYB535MJP
+            -Dsonar.organization=your-sonarcloud-org
+            -Dsonar.sources=.
+            -Dsonar.java.binaries=out
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
