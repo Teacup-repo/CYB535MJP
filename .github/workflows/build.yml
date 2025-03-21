@@ -39,7 +39,7 @@ jobs:
           projectBaseDir: .
           args: >
             -Dsonar.projectKey=clos-182_CYB535MJP
-            -Dsonar.organization=clos-182/projects
+            --Dsonar.organization=clos-182
             -Dsonar.sources=.
             -Dsonar.java.binaries=out
         env:
