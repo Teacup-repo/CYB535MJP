@@ -1,4 +1,3 @@
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,5 +39,20 @@ public class TodoList {
      */
     public List<String> getTasks() {
         return new ArrayList<>(tasks);
+    }
+
+    /**
+     * Main method for simple demonstration.
+     */
+    public static void main(String[] args) {
+        TodoList todoList = new TodoList();
+        
+        todoList.addTask("Buy groceries");
+        todoList.addTask("Finish homework");
+        
+        System.out.println("To-Do List:");
+        for (String task : todoList.getTasks()) {
+            System.out.println("- " + task);
+        }
     }
 }
